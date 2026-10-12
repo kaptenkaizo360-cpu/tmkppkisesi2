@@ -409,7 +409,7 @@ body.talking .bit .mouth{animation:talk .22s infinite alternate}
 .modal .box .cnt{font-family:var(--display);font-weight:700;font-size:64px;color:var(--good-d);position:relative;z-index:2}
 .modal .box .col{display:flex;flex-direction:column;align-items:center;gap:12px;position:relative;z-index:2}
 .foot{font-size:14px;color:var(--muted);margin:10px 0 0}
-.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%) translateY(140%);z-index:70;background:#fff;border-radius:999px;padding:10px 20px 10px 10px;display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:600;font-size:17px;box-shadow:var(--sh);transition:transform .4s cubic-bezier(.3,1.5,.5,1);max-width:calc(100% - 32px)}
+.toast{position:fixed;left:50%;bottom:calc(110px + env(safe-area-inset-bottom,0px));transform:translateX(-50%) translateY(300%);z-index:80;background:#fff;border-radius:999px;padding:10px 20px 10px 10px;display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:600;font-size:17px;box-shadow:var(--sh);transition:transform .4s cubic-bezier(.3,1.5,.5,1);max-width:calc(100% - 32px)}
 .toast.show{transform:translateX(-50%) translateY(0)}
 .toast i{width:34px;height:34px;border-radius:50%;background:var(--good);display:grid;place-items:center;flex:0 0 auto}
 .toast i svg{width:16px;height:16px}
@@ -435,6 +435,47 @@ body.calm *,body.calm *::before,body.calm *::after{animation-duration:.01ms!impo
 }
 .tgmore{display:none}
 @media (max-width:560px){.pchips{display:none}.tgmore{display:inline-flex}.ctrlbar:not(.open) .tg:not(.tgmore):not(#tTest),.ctrlbar:not(.open) .vchip{display:none}.pact .btn{padding:6px 12px}.dgrp{gap:4px}}
+
+/* ===== PAPARAN PENUH TUGASAN ===== */
+body.focus{overflow:hidden}
+body.focus .view:not([hidden]){position:fixed;inset:0;z-index:40;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;background:radial-gradient(700px 420px at 92% -5%,#FFE1EE 0,transparent 70%),radial-gradient(700px 460px at -8% 18%,#DDF4FF 0,transparent 70%),var(--bg);padding-top:calc(86px + env(safe-area-inset-top,0px));padding-bottom:calc(112px + env(safe-area-inset-bottom,0px));padding-inline:max(16px,calc((100vw - 1080px)/2))}
+body.focus .view .sec-h{margin-bottom:10px}
+body.focus .view .sec-h h2{font-size:clamp(20px,3.4vw,26px)}
+.fbar{position:fixed;left:0;right:0;top:0;z-index:45;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);box-shadow:0 4px 20px rgba(61,58,92,.10);padding:calc(10px + env(safe-area-inset-top,0px)) max(12px,calc((100vw - 1080px)/2)) 10px;display:flex;align-items:center;gap:12px}
+.fbar .back{border:0;background:var(--soft);border-radius:999px;min-height:48px;padding:0 16px 0 10px;display:inline-flex;align-items:center;gap:6px;font-family:var(--display);font-weight:600;font-size:16px;flex:0 0 auto}
+.fbar .back svg{width:22px;height:22px}
+.fbar .ft{flex:1;min-width:0}
+.fbar .ft b{display:block;font-family:var(--display);font-weight:700;font-size:clamp(18px,3.4vw,24px);line-height:1.1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.fbar .ft small{color:var(--muted);font-size:13px}
+.fbar .fp{display:flex;align-items:center;gap:8px;flex:0 0 auto}
+.fbar .fp .ptrack{width:120px}
+.fbar .fp b{font-family:var(--display);font-weight:700;font-size:16px;font-variant-numeric:tabular-nums}
+.fnext{position:fixed;left:0;right:0;bottom:0;z-index:45;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);box-shadow:0 -4px 20px rgba(61,58,92,.10);padding:12px max(12px,calc((100vw - 1080px)/2)) calc(12px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;gap:12px}
+.fnext #fStatus{flex:1;min-width:0;font-size:15px;color:var(--muted);line-height:1.35}
+.fnext #fStatus .ok{color:var(--good-d);font-family:var(--display);font-weight:600;font-size:17px}
+.fnext .btn{flex:0 0 auto;min-height:58px;font-size:20px;padding:10px 26px}
+.pop{position:fixed;inset:0;z-index:75;background:rgba(61,58,92,.35);backdrop-filter:blur(4px);display:grid;place-items:center;padding:16px}
+.pbox{width:min(480px,100%);max-height:calc(100vh - 32px);overflow-y:auto;background:#fff;border-radius:34px;box-shadow:var(--sh);padding:22px 20px 18px;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;animation:popIn .35s cubic-bezier(.3,1.5,.5,1)}
+@keyframes popIn{from{transform:scale(.85);opacity:0}to{transform:none;opacity:1}}
+.pbox h3{margin:0;font-family:var(--display);font-weight:700;font-size:clamp(22px,5vw,28px);line-height:1.15}
+.pbox p{margin:0}
+.pbox .pl{font-weight:700;margin-top:4px}
+.pbox .hg{font-size:54px;line-height:1}
+#popB{width:100%;display:flex;flex-direction:column;gap:8px;align-items:center}
+.mlist{width:100%;display:flex;flex-direction:column;gap:8px;text-align:left}
+.mlist button{display:flex;align-items:center;gap:10px;border:0;background:var(--soft);border-radius:22px;padding:8px 12px 8px 8px;min-height:58px;width:100%}
+.mlist i{font-style:normal;width:36px;height:36px;border-radius:50%;background:var(--pink);display:grid;place-items:center;font-family:var(--display);font-weight:700;flex:0 0 auto}
+.mlist span{flex:1;min-width:0}
+.mlist b{display:block;font-family:var(--display);font-weight:600;font-size:17px}
+.mlist small{display:block;color:var(--muted);font-size:13px;line-height:1.3}
+.mlist em{font-style:normal;font-weight:700;font-size:14px;background:#fff;border-radius:999px;padding:4px 12px;flex:0 0 auto}
+.pbtns{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;width:100%;margin-top:6px}
+.pbtns .btn{flex:1 1 160px}
+@media (max-width:560px){
+  .fbar{gap:8px}.fbar .back{padding:0 12px 0 8px;font-size:15px}.fbar .fp .ptrack{width:56px}.fbar .ft small{font-size:12px}
+  .fnext{flex-direction:column;align-items:stretch;gap:8px}.fnext #fStatus{text-align:center;font-size:14px}.fnext .btn{width:100%;min-height:56px;font-size:19px}
+  body.focus .view:not([hidden]){padding-top:calc(78px + env(safe-area-inset-top,0px));padding-bottom:calc(140px + env(safe-area-inset-bottom,0px))}
+}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition:none!important}}
 </style>
 
@@ -461,6 +502,7 @@ body.calm *,body.calm *::before,body.calm *::after{animation-duration:.01ms!impo
       <div class="pprog"><div class="ptrack"><i id="pBar"></i></div><div class="pchips" id="pChips"></div></div>
       <div class="pact"><button class="btn gold" id="pCert" type="button">Sijil</button><button class="btn ghost" id="pSwitch" type="button">Tukar murid</button></div>
     </div>
+    <p class="dhint" style="margin:0;font-size:14px;color:var(--muted);padding-left:4px">Tekan mana-mana tugasan untuk buka paparan penuh. Siapkan semua 8 tugasan untuk dapat sijil.</p>
     <div class="dgrp"><span class="dlab">Belajar</span>
       <div class="dtiles">
         <button class="dtile" data-go="v0" data-task="v0" style="--c:#CDEFFB"><span class="ok"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-6" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="di"><svg viewBox="0 0 24 24"><path d="M8 5l12 7-12 7z" fill="#2E9FC9"/></svg></span><span>Video 1<small>Peralatan asas</small></span></button>
@@ -560,13 +602,16 @@ body.calm *,body.calm *::before,body.calm *::after{animation-duration:.01ms!impo
     </div>
   </section>
 
-  <section class="view" data-view="misi" hidden>
+  <section class="view" data-view="misi" id="v-misi" hidden>
     <div class="sec-h" id="misi"><b style="background:var(--lemon)"></b><h2>Pusat Misi<small>30 soalan dalam 3 misi · tiada had masa · boleh cuba lagi</small></h2></div>
     <div class="arcade" id="arcade"></div>
     <p class="foot">Bintang emas: betul pada cubaan pertama. Bintang perak: betul selepas mencuba lagi.</p>
   </section>
 </div>
 <div class="modal" id="rest" hidden><div class="box"><div class="breath"></div><div class="col"><p id="restT">Rehat mata. Pandang jauh ke luar tingkap.</p><div class="cnt" id="restC">10</div><button class="btn ghost" id="restSkip">Langkau</button></div></div></div>
+<div class="fbar" id="fbar" hidden><button class="back" id="fBack" type="button"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" stroke="#3D3A5C" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Menu</button><div class="ft"><b id="fTitle"></b><small id="fStep"></small></div><div class="fp"><div class="ptrack"><i id="fProg"></i></div><b id="fCount">0/8</b></div></div>
+<div class="fnext" id="fnext" hidden><div id="fStatus"></div><button class="btn green" id="fDone" type="button">Selesai, seterusnya →</button></div>
+<div class="pop" id="pop" hidden role="dialog" aria-modal="true" aria-labelledby="popT"><div class="pbox"><div id="popIc"></div><h3 id="popT"></h3><div id="popB"></div><div class="pbtns" id="popBtns"></div></div></div>
 <div class="toast" id="toast" role="status" aria-live="polite"><i><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-6" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></i><span id="toastT"></span></div>
 
 <script>
@@ -664,7 +709,7 @@ const countOf=s=>TASKS.filter(t=>doneOf(s,t.k)).length;
 const doneCount=()=>countOf(STU);
 let toastT=0;
 function toast(msg){$('#toastT').textContent=msg;$('#toast').classList.add('show');clearTimeout(toastT);toastT=setTimeout(()=>$('#toast').classList.remove('show'),2600)}
-function complete(k,before){if(!before&&taskDone(k)){const t=TASKS.find(x=>x.k===k);toast(`${t.n} selesai! ${doneCount()} / 8`);sGood();if(doneCount()===8)setTimeout(()=>{toast('Semua tugasan selesai! Sijil sudah dibuka.');speak(`Tahniah ${nama.split(' ')[0]}! Semua tugasan selesai. Sijil awak sudah dibuka.`)},2800)}}
+function complete(k,before){if(!before&&taskDone(k)){const t=TASKS.find(x=>x.k===k);toast(`${t.n} selesai! ${doneCount()} / 8`);sGood();if(doneCount()===8)setTimeout(allDonePop,1400)}}
 function renderProg(){
   if(!STU)return;const n=doneCount();
   $('#pAv').textContent=STU.n.charAt(0).toUpperCase();$('#pName').textContent=STU.n;$('#pCount').textContent=`${n} / 8 tugasan selesai`;
@@ -673,7 +718,7 @@ function renderProg(){
   document.querySelectorAll('.dtile[data-task]').forEach(b=>b.classList.toggle('done',taskDone(b.dataset.task)));
   const c=$('#pCert');c.textContent=n===8?'Lihat Sijil':`Sijil (${n}/8)`;c.classList.toggle('ready',n===8);
   document.querySelectorAll('#vtabs .tab').forEach(b=>{const k='v'+b.dataset.v,sp=b.querySelector('.tk2');if(taskDone(k)&&!sp)b.querySelector('span:last-child').insertAdjacentHTML('beforeend',`<span class="tk2">${TICK}</span>`);if(!taskDone(k)&&sp)sp.remove()});
-  updSeen();thTabs();
+  updSeen();thTabs();if(typeof updateFocus==='function')updateFocus();
 }
 /* skrin nama */
 function openGate(){
@@ -690,7 +735,7 @@ function enter(n){
   STU.prog=Object.assign(newStu(n).prog,STU.prog||{});if(!Array.isArray(STU.prog.mDone))STU.prog.mDone=[false,false,false];if(!Array.isArray(STU.prog.kenali))STU.prog.kenali=[];
   nama=STU.n;res=Array.isArray(STU.res)?STU.res.slice():[];wrongs=Array.isArray(STU.wr)?STU.wr.slice():[];
   turns=[];saveStu();$('#gate').hidden=true;AC();
-  loadCards(KG);const lv=LSget('mksView','v0');go(/^m[0-2]$/.test(lv)?'misi':lv);
+  loadCards(KG);closeFocus();
   speak(`Selamat datang, ${nama.split(' ')[0]}! Jom belajar.`);
 }
 $('#gateName').oninput=e=>{$('#gateGo').disabled=e.target.value.trim().length<2};
@@ -796,7 +841,7 @@ ovl.onclick=play;
 $('#replay').onclick=()=>{pause();t=0;play()};
 track.onclick=e=>{const r=track.getBoundingClientRect();t=Math.max(0,Math.min(DUR-.01,(e.clientX-r.left)/r.width*DUR));cur=-1;draw();if(playing)speak(SC[cur].c,1)};
 $('#fs').onclick=()=>{const p=$('#player');try{(document.fullscreenElement?document.exitFullscreen():p.requestFullscreen()).catch(()=>{})}catch(e){}};
-document.querySelectorAll('#vtabs .tab').forEach(b=>b.onclick=()=>{loadVideo(+b.dataset.v);markTile('v'+b.dataset.v)});
+document.querySelectorAll('#vtabs .tab').forEach(b=>b.onclick=()=>{loadVideo(+b.dataset.v);markTile('v'+b.dataset.v);FT='v'+b.dataset.v;updateFocus()});
 loadVideo(0);
 
 /* ================= KENALI KAMI ================= */
@@ -996,12 +1041,12 @@ function wireClr(){arcade.querySelectorAll('.clr').forEach(clr=>clr.onclick=()=>
 function stopGames(){PF.on=false;SP.on=false;cancelAnimationFrame(PF.raf);cancelAnimationFrame(SP.raf)}
 const whoH=()=>`<span class="gq">${esc(nama)}</span>`;
 function hub(){
-  stopGames();gameOn=false;mission=-1;if(!playing)musicStop();
+  stopGames();gameOn=false;mission=-1;if(VIEW==='misi'){FT=null;markTile('misi')}if(!playing)musicStop();
   arcade.innerHTML=`<div class="ghud"><span class="gq">Pusat Misi · ${esc(nama)}</span><span class="gscore">${SV.star('#FFD25E')}<b>${goldAll()}</b>&nbsp;/ ${NQ}</span></div>
   <div class="hub">${MIS.map((m,i)=>`<div class="mcard ${STU.prog.mDone[i]?'done':''}"><div class="mi" style="--c:${m.c}">${m.ic()}</div><span class="tag">${m.tag} · 10 soalan</span><h4>${m.n}</h4><p>${m.d}</p><div class="mstars">${Array.from({length:10},(_,k)=>SV.star(res[i*10+k]===2?'#FFD25E':res[i*10+k]===1?'#D8D6E8':'#F1EFF8')).join('')}</div><button class="btn ${i===1?'gold':i===2?'pink':''}" data-m="${i}">${STU.prog.mDone[i]?'Main Lagi':'Mula Misi'}</button></div>`).join('')}</div>
   <div class="hubbar"><button class="btn gold" id="cert">${doneCount()===8?'Lihat Sijil':`Sijil (${doneCount()}/8 tugasan)`}</button></div>${board()}`;
-  arcade.querySelectorAll('[data-m]').forEach(b=>b.onclick=()=>{markTile('m'+b.dataset.m);startMission(+b.dataset.m)});
-  $('#cert').onclick=certScreen;wireClr();
+  arcade.querySelectorAll('[data-m]').forEach(b=>b.onclick=()=>{markTile('m'+b.dataset.m);FT='m'+b.dataset.m;startMission(+b.dataset.m);updateFocus();$('#v-misi').scrollTop=0});
+  $('#cert').onclick=certOrMissing;wireClr();updateFocus();
 }
 function startMission(m){
   mission=m;mi=0;for(let k=0;k<10;k++)res[m*10+k]=undefined;wrongs=wrongs.filter(w=>w.m!==m);gameOn=true;musicStart();
@@ -1061,22 +1106,15 @@ function staticAdvice(){
 }
 function certScreen(){
   if(!STU)return openGate();
-  showView('misi','misi');stopGames();gameOn=false;if(!playing)musicStop();mission=-1;
-  const n=doneCount();
-  if(n<8){
-    arcade.innerHTML=`<div class="result"><div style="width:110px">${SV.trophy()}</div><h3>Sijil belum dibuka</h3><p style="margin:0;color:var(--muted)">${esc(nama)}, awak sudah siapkan ${n} daripada 8 tugasan. Tekan tugasan yang belum selesai untuk menyambung.</p>
-    <div class="todo">${TASKS.map(t=>`<button type="button" class="${taskDone(t.k)?'ok':''}" data-go="${t.k}"><i>${taskDone(t.k)?'✓':'→'}</i>${t.n}</button>`).join('')}</div>
-    <div class="rowb"><button class="btn ghost" id="back">Pusat Misi</button></div></div>`;
-    arcade.querySelectorAll('.todo [data-go]').forEach(b=>b.onclick=()=>go(b.dataset.go));$('#back').onclick=hub;
-    speak(`Sijil belum dibuka. Awak sudah siapkan ${n} daripada 8 tugasan.`);return;
-  }
+  const n=doneCount();if(n===8){showView('misi','misi');stopGames();gameOn=false;mission=-1}
+  if(n<8){showView('misi','misi');hub();return missingPop()}
   const gold=goldAll(),all=res.filter(Boolean).length;
   const [title,txt]=gold>=24?['Juara Komputer!','Awak kenal semua peralatan komputer.']:gold>=15?['Hebat!','Teruskan berlatih, hampir menjadi juara!']:['Syabas kerana berusaha!','Awak sudah menamatkan semua pelajaran.'];
   const tarikh=new Date().toLocaleDateString('ms-MY',{day:'numeric',month:'long',year:'numeric'});
   arcade.innerHTML=`<div class="result"><div class="cert"><div class="trophy">${SV.trophy()}</div><span class="ribbon">Sijil Penghargaan</span><p class="small">Dengan bangganya diberikan kepada</p><p class="cname">${esc(nama)}</p><p class="small">kerana menamatkan pelajaran Mari Kenali Saya: peralatan asas dan tambahan komputer</p><div class="sc">${gold} / ${NQ}</div><div class="t2">${title}</div><div class="bym">${TASKS.map(t=>`<span>✓ ${t.n}</span>`).join('')}</div><p style="margin:0">${gold} bintang emas · ${all-gold} bintang perak. ${txt}</p><p class="small">${tarikh}</p></div>
   <div class="aifb"><div class="bitq">${BIT()}</div><div style="flex:1;min-width:0"><span class="who2">Pesanan Cikgu Bit</span><p id="aiadv">${esc(staticAdvice())}</p>${aiOk?'<button class="btn lilac" type="button" id="aib" style="margin-top:10px;font-size:16px;min-height:46px">Minta pesanan khas Cikgu Bit AI</button>':''}</div></div>
   <div class="rowb"><button class="btn gold" id="back">Pusat Misi</button><button class="btn ghost" id="nextKid">Murid Seterusnya</button></div>${board()}</div>`;
-  sGood();burst(arcade.querySelector('.trophy'));speak(`Tahniah ${nama}. ${title} Awak dapat ${gold} bintang emas.`);
+  sGood();burst(arcade.querySelector('.trophy'));updateFocus();
   $('#back').onclick=hub;$('#nextKid').onclick=openGate;wireClr();
   const aib=$('#aib');
   if(aib)aib.onclick=async()=>{const out=$('#aiadv');aib.disabled=true;out.textContent='Cikgu Bit sedang menulis pesanan…';
@@ -1085,7 +1123,7 @@ function certScreen(){
     try{const {text}=await sample(p,{modelTier:'quick',onText:({text})=>{out.textContent=text}});out.textContent=text;speak(text);aib.hidden=true}
     catch(e){out.textContent=e.text||staticAdvice();aib.disabled=false;if(['not_granted','sampling_disabled'].includes(e.code))aib.hidden=true}};
 }
-$('#pCert').onclick=certScreen;
+$('#pCert').onclick=certOrMissing;
 
 /* ----- Misi 1 ----- */
 function classicRender(d){
@@ -1211,19 +1249,86 @@ function spHit(m){
   else{m.dis=true;m.fl=20;onWrong()}
 }
 
-/* ================= PAPAN PEMUKA & PAPARAN ================= */
-let VIEW='tonton';
+/* ================= PAPAN PEMUKA & PAPARAN PENUH ================= */
+let VIEW=null,FT=null;
 document.querySelectorAll('.dtile .gi').forEach(e=>e.innerHTML=e.dataset.ic==='bit'?BIT():e.dataset.ic==='ship'?SV.ship():SV.trophy());
 function markTile(tile){document.querySelectorAll('.dtile').forEach(b=>b.setAttribute('aria-current',b.dataset.go===tile));LSset('mksView',tile)}
 function stopAll(){pause();thStop();stopGames();gameOn=false;musicStop()}
-function showView(v,tile){
+const TNAME=k=>(TASKS.find(t=>t.k===k)||{}).n;
+function leaving(v){
   if(VIEW==='tonton'&&v!=='tonton')pause();
   if(VIEW==='terapi'&&v!=='terapi'){thStop();thLoad(TH.mode)}
-  if(VIEW==='misi'&&v!=='misi'&&(PF.on||SP.on||mission>=0)){stopGames();gameOn=false;if(!playing)musicStop();mission=-1}
-  VIEW=v;document.querySelectorAll('.view').forEach(s=>s.hidden=s.dataset.view!==v);
-  if(tile)markTile(tile);
-  const sec=document.querySelector(`.view[data-view="${v}"]`);const r=sec.getBoundingClientRect();if(r.top<0||r.top>innerHeight*.7)sec.scrollIntoView({behavior:'smooth',block:'start'});
+  if(VIEW==='misi'&&v!=='misi'&&(PF.on||SP.on||mission>=0)){stopGames();gameOn=false;mission=-1}
 }
+function showView(v,tile){
+  leaving(v);VIEW=v;
+  document.querySelectorAll('.view').forEach(s=>s.hidden=s.dataset.view!==v);
+  if(tile)markTile(tile);
+  FT=TASKS.some(t=>t.k===tile)?tile:null;
+  document.body.classList.add('focus');$('#fbar').hidden=false;$('#fnext').hidden=false;
+  const sec=document.querySelector(`.view[data-view="${v}"]`);sec.scrollTop=0;
+  updateFocus();
+}
+function closeFocus(){
+  leaving(null);VIEW=null;FT=null;
+  document.body.classList.remove('focus');$('#fbar').hidden=true;$('#fnext').hidden=true;
+  document.querySelectorAll('.view').forEach(s=>s.hidden=true);markTile('');
+  window.scrollTo({top:0});renderProg();
+}
+function remainText(k){
+  if(!STU)return '';const p=STU.prog;
+  if(k==='v0'||k==='v1')return 'Tonton video sampai habis (30 saat).';
+  if(k==='kenali'){const left=ALLK.filter(x=>!p.kenali.includes(x)).map(x=>P[x].sn||P[x].n);return left.length?`Sudah baca ${8-left.length}/8 kad. Belum: ${left.join(', ')}.`:''}
+  if(k==='terapi'){const nm={ikut:'Ikut Cahaya',lompat:'Lompat Mata',cari:'Cari Saya',rehat:'Rehat Mata'};const left=Object.keys(nm).filter(x=>!p.terapi[x]).map(x=>nm[x]);return left.length?`Sudah siap ${4-left.length}/4 aktiviti. Belum: ${left.join(', ')}.`:''}
+  if(k==='tanya')return 'Tanya Cikgu Bit sekurang-kurangnya 1 soalan.';
+  if(k[0]==='m'){const m=+k[1];return `Jawab semua 10 soalan sampai tamat misi. Sudah dijawab: ${doneIn(m)}/10.`}
+  return '';
+}
+function updateFocus(){
+  if(!document.body.classList.contains('focus')||!STU)return;
+  const n=doneCount();
+  $('#fTitle').textContent=FT?TNAME(FT):VIEW==='misi'?'Pusat Misi':'';
+  $('#fStep').textContent=FT?`Tugasan ${TASKS.findIndex(t=>t.k===FT)+1} daripada 8`:`${n} / 8 tugasan selesai`;
+  $('#fProg').style.width=n/8*100+'%';$('#fCount').textContent=`${n}/8`;
+  const b=$('#fDone'),st=$('#fStatus');
+  if(!FT&&$('#arcade .cert')){st.innerHTML='<b class="ok">Tahniah! Sijil awak</b>';b.textContent='Kembali ke Menu';b.className='btn ghost';return}
+  if(!FT){st.innerHTML=n===8?'<b class="ok">Semua tugasan selesai!</b>':`Siap ${n} daripada 8 tugasan`;b.textContent=n===8?'Lihat Sijil':'Semak tugasan';b.className='btn gold'+(n===8?' ready':'');return}
+  if(taskDone(FT)){st.innerHTML='<b class="ok">✓ Tugasan ini selesai</b>';b.textContent=n===8?'Lihat Sijil':'Selesai, seterusnya →';b.className='btn green ready'}
+  else{st.textContent=remainText(FT);b.textContent='Selesai, seterusnya →';b.className='btn green'}
+}
+/* popup */
+function popup({ic,title,body,btns}){
+  $('#popIc').innerHTML=ic||'';$('#popT').textContent=title;$('#popB').innerHTML=body||'';
+  $('#popBtns').innerHTML='';btns.forEach(([label,cls,fn])=>{const b=document.createElement('button');b.type='button';b.className='btn '+cls;b.textContent=label;b.onclick=()=>{closePop();fn&&fn()};$('#popBtns').appendChild(b)});
+  $('#pop').hidden=false;setTimeout(()=>$('#popBtns button')?.focus(),50);
+}
+function closePop(){$('#pop').hidden=true}
+$('#pop').addEventListener('click',e=>{if(e.target.id==='pop')closePop()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('#pop').hidden)closePop()});
+function missingPop(){
+  const n=doneCount(),left=TASKS.filter(t=>!taskDone(t.k));
+  popup({ic:`<div style="width:86px">${SV.trophy()}</div>`,title:'Anda masih belum siapkan tugasan',
+    body:`<p>Sijil akan dibuka bila semua 8 tugasan siap. Awak sudah siap <b>${n} daripada 8</b>.</p><p class="pl">Bahagian yang belum siap:</p><div class="mlist">${left.map(t=>`<button type="button" data-go="${t.k}"><i>${TASKS.indexOf(t)+1}</i><span><b>${t.n}</b><small>${esc(remainText(t.k))}</small></span><em>Pergi</em></button>`).join('')}</div>`,
+    btns:[['Tutup','ghost']]});
+  $('#popB').querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{closePop();go(b.dataset.go)});
+}
+function allDonePop(){
+  popup({ic:`<div style="width:96px">${SV.trophy()}</div>`,title:`Tahniah, ${nama.split(' ')[0]}!`,body:'<p>Awak sudah siapkan <b>semua 8 tugasan</b>. Sijil awak sudah sedia.</p>',btns:[['Lihat Sijil','gold',certScreen],['Tutup','ghost']]});
+}
+function certOrMissing(){if(!STU)return openGate();doneCount()===8?certScreen():missingPop()}
+function goNext(){
+  if(doneCount()===8)return allDonePop();
+  const i=TASKS.findIndex(t=>t.k===FT);
+  for(let s=1;s<=8;s++){const t=TASKS[((i<0?-1:i)+s+8)%8];if(!taskDone(t.k))return go(t.k)}
+}
+$('#fDone').onclick=()=>{
+  if(!FT&&$('#arcade .cert'))return closeFocus();
+  if(!FT)return certOrMissing();
+  if(doneCount()===8)return allDonePop();
+  if(!taskDone(FT))return popup({ic:'<div class="hg">⏳</div>',title:'Tugasan ini belum selesai',body:`<p><b>${TNAME(FT)}</b>: ${esc(remainText(FT))}</p>`,btns:[['Sambung tugasan ini','pink'],['Langkau dulu','ghost',goNext]]});
+  goNext();
+};
+$('#fBack').onclick=closeFocus;
 function go(tile){
   if(!STU){openGate();return}
   if(tile==='v0'||tile==='v1'){showView('tonton',tile);loadVideo(+tile[1])}
@@ -1232,7 +1337,8 @@ function go(tile){
   else{showView('tonton','v0');loadVideo(0)}
 }
 document.querySelectorAll('.dtile').forEach(b=>b.onclick=()=>go(b.dataset.go));
-$('#toGame').onclick=()=>go('misi');
+$('#toGame').onclick=()=>go('m0');
+document.querySelectorAll('.view').forEach(s=>s.hidden=true);
 openGate();
 
 </script>
